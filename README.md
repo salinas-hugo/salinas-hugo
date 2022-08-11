@@ -2,7 +2,7 @@
 - 👀 I’m interested in data structures, data processing and algorithm analysis.
 - 🌱 I’m currently learning Python and DevOps with Python.
 - 💞️ I’m looking to collaborate on whatever that you think that I can help with.
-- 📫 How to reach me at redled@gmail.com or hugo.salinas@striderintel.com
+- 📫 You can reach me at redled@gmail.com.
 
 <!---
 salinas-hugo/salinas-hugo is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
