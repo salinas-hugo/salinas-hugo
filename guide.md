@@ -1,16 +1,17 @@
 # Howto guide
 ## Remaping of keys
-    mkdir ~/Library/KeyBindings/ && vi ~/Library/KeyBindings/DefaultKeyBinding.dict
-{
-  "\UF729"  = moveToBeginningOfParagraph:; // home
-  "\UF72B"  = moveToEndOfParagraph:; // end
-  "$\UF729" = moveToBeginningOfParagraphAndModifySelection:; // shift-home
-  "$\UF72B" = moveToEndOfParagraphAndModifySelection:; // shift-end
-  "^\UF729" = moveToBeginningOfDocument:; // ctrl-home
-  "^\UF72B" = moveToEndOfDocument:; // ctrl-end
-  "^$\UF729" = moveToBeginningOfDocumentAndModifySelection:; // ctrl-shift-home
-  "^$\UF72B" = moveToEndOfDocumentAndModifySelection:; // ctrl-shift-end
-}
+    mkdir ~/Library/KeyBindings/ \
+    && vi ~/Library/KeyBindings/DefaultKeyBinding.dict
+    {
+      "\UF729"  = moveToBeginningOfParagraph:; // home
+      "\UF72B"  = moveToEndOfParagraph:; // end
+      "$\UF729" = moveToBeginningOfParagraphAndModifySelection:; // shift-home
+      "$\UF72B" = moveToEndOfParagraphAndModifySelection:; // shift-end
+      "^\UF729" = moveToBeginningOfDocument:; // ctrl-home
+      "^\UF72B" = moveToEndOfDocument:; // ctrl-end
+      "^$\UF729" = moveToBeginningOfDocumentAndModifySelection:; // ctrl-shift-home
+      "^$\UF72B" = moveToEndOfDocumentAndModifySelection:; // ctrl-shift-end
+    }
 
 ## Install xcode
     xcode-select --install
@@ -23,6 +24,24 @@
 
 ## Install ohmyzsh
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+## Install git and configuration
+    brew install git
+    git config --global user.name "Hugo Salinas" \
+    && git config --global user.email "hugo.salinas@striderintel.com" \
+    && git config --global color.ui "auto" \
+    && git config --global alias.tree "log --graph --decorate --pretty=online --abbrev-commit" \
+    && git config --global alias.st "status" \
+    && git config --global alias.ci "commit -v" \
+    && git config --global alias.co "checkout" \
+    && git config --global alias.br "branch" \
+    && git config --global alias.unstage "reset HEAD --" \
+    && git config --global alias.discard "checkout --" \
+    && git config --global alias.last "log -1 HEAD" \
+    && git config --global core.editor "vim" \
+    && git config --global core.autocrlf "input" \
+    && git config --global core.fileMode "false" \
+    && git config --global push.default "simple"
 
 ## Install docker
     brew install --cask docker
@@ -50,24 +69,6 @@
     deactivate
 ### clean a venv
     pip uninstall -y -r <(pip freeze)
-
-## Install git and configuration
-    brew install git
-    git config --global user.name "Hugo Salinas" \
-    && git config --global user.email "hugo.salinas@striderintel.com" \
-    && git config --global color.ui "auto" \
-    && git config --global alias.tree "log --graph --decorate --pretty=online --abbrev-commit" \
-    && git config --global alias.st "status" \
-    && git config --global alias.ci "commit -v" \
-    && git config --global alias.co "checkout" \
-    && git config --global alias.br "branch" \
-    && git config --global alias.unstage "reset HEAD --" \
-    && git config --global alias.discard "checkout --" \
-    && git config --global alias.last "log -1 HEAD" \
-    && git config --global core.editor "vim" \
-    && git config --global core.autocrlf "input" \
-    && git config --global core.fileMode "false" \
-    && git config --global push.default "simple"
     
 ## Install requirements for ribs-ui
     # needed by pymssql
@@ -93,11 +94,11 @@
 
 ## Python 3.8 in Amazon Linux 2
 
-sudo amazon-linux-extras enable python3.8
-sudo yum install python3.8
-sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.8 1
+    sudo amazon-linux-extras enable python3.8
+    sudo yum install python3.8
+    sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.8 1
 
-python3.8 --version
-python --version
+    python3.8 --version
+    python --version
 
-sudo pip3.8 install virtualenv
+    sudo pip3.8 install virtualenv
