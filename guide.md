@@ -48,8 +48,10 @@
 
 ## Install python and virtualenv
     brew install python@3.8
-    pip3 install --upgrade pip
-    pip3 install virtualenv
+    pip3.8 install --upgrade pip
+    pip3.8 install --upgrade setuptools
+    pip3.8 install --upgrade wheel
+    sudo pip3.8 install virtualenv
 
 ## Install general pip reqs
     pip3 install black
@@ -102,3 +104,26 @@
     python --version
 
     sudo pip3.8 install virtualenv
+
+## ssh config
+
+    cat > .ssh/config << EOF
+    Host github.com
+    IdentityFile ~/.ssh/github_id_ed25519
+
+    Host *
+    user hugo.salinas
+    IdentityFile ~/.ssh/id_ed25519
+
+    Host screening-api
+    HostName 10.0.11.30
+
+    Host longbow
+    Hostname longbow1.strider-intel.net
+
+    Host document1
+    Hostname document-1.strider-intel.net
+
+    Host document2
+    Hostname document-2.strider-intel.net
+    EOF
